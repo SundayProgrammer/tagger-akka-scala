@@ -1,0 +1,34 @@
+{
+    "rules" : [
+            {
+                "requiredWords": ["rybe", "dorszcz"],
+                "bannedWords": ["restauracja"],
+                "category": "gotowanie"
+            },
+            {
+                "requiredWords": ["piwo", "rzemieslnicze"],
+                "bannedWords": ["sklep"],
+                "category": "pub"
+            },
+            {
+                "requiredWords": ["pizza", "szybko"],
+                "bannedWords": ["dom", "skladniki"],
+                "category": "fastfood"
+            },
+            {
+                "requiredWords": ["krem", "sloncu"],
+                "bannedWords": ["plaza"],
+                "category": "drogeria"
+            },
+            {
+                "requiredWords": ["polacz", "galaz"],
+                "bannedWords": ["drzewo"],
+                "category": "git"
+            },
+            {
+                "requiredWords": ["strzal", "celny"],
+                "bannedWords": ["pilka"],
+                "category": "strzelnica"
+            }
+        ]
+}
