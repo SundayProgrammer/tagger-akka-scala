@@ -5,7 +5,6 @@ import akka.event.{Logging, LoggingAdapter}
 import helper.Rule
 
 import scala.collection.mutable.ArrayBuffer
-import scala.util.control.Breaks._
 
 object AggregatorActor {
   def props(rules: ArrayBuffer[Rule]): Props = Props(new AggregatorActor(rules))
@@ -35,10 +34,11 @@ class AggregatorActor(val rules: ArrayBuffer[Rule]) extends Actor with ActorLogg
     for (rule <- rules) {
       count = rule.requiredWords.length
       for (ruleWord <- rule.requiredWords) {
-        for (word <- words){
+        var pause: Boolean = false
+        for (word <- words if pause == false){
           if (word.equals(ruleWord)) {
             count -= 1
-            break
+            pause = true
           }
         }
       }

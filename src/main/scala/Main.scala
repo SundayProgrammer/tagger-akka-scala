@@ -24,6 +24,5 @@ object Main extends App {
     num = Random.nextInt(scope)
     sentence = sentences(num)
     taggerActor ! Categorize(sentence)
-//    taggerActor.tell(new Categorize(sentence), ActorRef.noSender)
   }
 }
